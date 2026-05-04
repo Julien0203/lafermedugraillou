@@ -823,7 +823,7 @@ figcaption {
 .section-transhumance::before {
   content: '';
   position: absolute; inset: 0;
-  background: url('images/IMG-20250520-WA0040.jpg') center/cover no-repeat;
+  background: url('IMG-20250520-WA0040.jpg') center/cover no-repeat;
   opacity: .08;
   pointer-events: none;
 }
