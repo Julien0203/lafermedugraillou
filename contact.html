@@ -40,7 +40,7 @@
         "name": "La Ferme du Graillou",
         "url": "https://www.lafermedugraillou.fr",
         "telephone": "+33-6-76-98-41-55",
-        "email": "contact@lafermedugraillou.fr",
+        "email": "elodiebertrand1@gmail.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Le Bourg",
@@ -69,7 +69,7 @@
   <header class="site-header" id="site-header">
     <nav class="nav-container" aria-label="Navigation principale">
       <a href="index.html" class="nav-logo" aria-label="La Ferme du Graillou – Retour à l'accueil">
-        <img src="images/LOGO.pdf_20240627_192916_0000.png"
+        <img src="images/logo-blanc.png"
              alt="Logo La Ferme du Graillou – Élevage Aubrac Cézens Cantal"
              width="110" height="74">
       </a>
@@ -148,7 +148,7 @@
                 <svg class="contact-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg>
                 <div>
                   <strong>Email</strong>
-                  <a href="mailto:contact@lafermedugraillou.fr" class="contact-link">contact@lafermedugraillou.fr</a>
+                  <a href="mailto:elodiebertrand1@gmail.com" class="contact-link">elodiebertrand1@gmail.com</a>
                 </div>
               </div>
             </address>
@@ -243,7 +243,7 @@
         </div>
 
         <form class="contact-form" data-animate="fade-up" style="--anim-delay:200ms"
-              action="mailto:contact@lafermedugraillou.fr"
+              action="mailto:elodiebertrand1@gmail.com"
               method="POST"
               enctype="text/plain">
           <div class="form-grid">
@@ -283,7 +283,7 @@
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="images/LOGO.pdf_20240627_192916_0000.png"
+        <img src="images/logo-blanc.png"
              alt="Logo La Ferme du Graillou" width="100" height="67" loading="lazy">
         <p class="footer-script">Naturellement Aubrac</p>
         <p class="footer-sub">Élevage Aubrac race pure · Cézens, Cantal (15)</p>
@@ -347,14 +347,14 @@
     });
     overlay.addEventListener('click', closeMenu);
     menu.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeMenu));
-    const animObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('is-visible'); animObs.unobserve(e.target); }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('[data-animate]').forEach(el => animObs.observe(el));
+
   })();
   </script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="gsap-animations.js" defer></script>
 
 </body>
 </html>

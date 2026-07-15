@@ -101,23 +101,11 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ──────────────────────────────────────────────────────
-   4. ANIMATIONS AU SCROLL
+   4. ANIMATIONS AU SCROLL (état initial – GSAP prend le relais)
 ────────────────────────────────────────────────────── */
 [data-animate] {
+  /* Masqué par défaut ; GSAP anime vers opacity:1 via ScrollTrigger */
   opacity: 0;
-  transition:
-    opacity  .7s var(--ease-out) var(--anim-delay, 0ms),
-    transform .7s var(--ease-out) var(--anim-delay, 0ms);
-}
-[data-animate="fade-up"]    { transform: translateY(36px); }
-[data-animate="fade-down"]  { transform: translateY(-36px); }
-[data-animate="fade-left"]  { transform: translateX(48px); }
-[data-animate="fade-right"] { transform: translateX(-48px); }
-[data-animate="scale"]      { transform: scale(.93); }
-
-[data-animate].is-visible {
-  opacity: 1;
-  transform: none;
 }
 
 /* ──────────────────────────────────────────────────────
@@ -422,15 +410,9 @@ figcaption {
   width: 100%;
 }
 
-/* Stagger animation hero */
+/* Stagger animation hero – géré par GSAP */
 .hero-anim {
-  opacity: 0;
-  transform: translateY(24px);
-  animation: hero-in .8s var(--ease-out) calc(var(--i) * 0.15s + .3s) forwards;
-}
-
-@keyframes hero-in {
-  to { opacity: 1; transform: none; }
+  opacity: 0; /* état initial ; GSAP anime via timeline */
 }
 
 .hero-eyebrow {
@@ -474,19 +456,13 @@ figcaption {
   flex-wrap: wrap;
 }
 
-/* Scroll cue */
+/* Scroll cue – bobbing et fade-in gérés par GSAP */
 .hero-scroll-cue {
   position: absolute;
   bottom: 36px; left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  animation: hero-in .8s var(--ease-out) 1.2s forwards, scroll-bob 2.4s ease-in-out 2s infinite;
-  opacity: 0;
-}
-
-@keyframes scroll-bob {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%       { transform: translateX(-50%) translateY(10px); }
+  opacity: 0; /* état initial ; GSAP anime */
 }
 
 .scroll-mouse {
@@ -1437,9 +1413,10 @@ figcaption {
     transition-duration: .01ms !important;
   }
   html { scroll-behavior: auto; }
-  [data-animate] { opacity: 1 !important; transform: none !important; }
+  [data-animate], .hero-anim, .page-hero-eyebrow, .page-hero-title, .page-hero-sub, .hero-scroll-cue {
+    opacity: 1 !important; transform: none !important;
+  }
   .hero-img { animation: none; transform: none; }
-  .hero-anim { animation: none; opacity: 1; transform: none; }
 }
 
 /* ──────────────────────────────────────────────────────
