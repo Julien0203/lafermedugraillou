@@ -1046,7 +1046,6 @@ figcaption {
 .bento-c { grid-column: span 3; grid-row: span 1; }
 .bento-d { grid-column: span 3; grid-row: span 1; }
 .bento-e { grid-column: span 4; grid-row: span 1; }
-.bento-f { grid-column: span 5; grid-row: span 1; }
 
 /* ──────────────────────────────────────────────────────
    21. SECTION CONTACT
@@ -1220,9 +1219,8 @@ figcaption {
   .bento-a { grid-column: span 4; grid-row: span 2; }
   .bento-b { grid-column: span 2; grid-row: span 1; }
   .bento-c { grid-column: span 2; grid-row: span 1; }
-  .bento-d { grid-column: span 2; grid-row: span 1; }
+  .bento-d { grid-column: span 3; grid-row: span 1; }
   .bento-e { grid-column: span 3; grid-row: span 1; }
-  .bento-f { grid-column: span 3; grid-row: span 1; }
 
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-produits { grid-column: 1 / -1; }
@@ -1318,13 +1316,13 @@ figcaption {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
   }
-  .bento-a, .bento-b, .bento-c, .bento-d, .bento-e, .bento-f {
+  .bento-a, .bento-b, .bento-c, .bento-d, .bento-e {
     grid-column: span 1;
     grid-row: span 1;
     height: 180px;
   }
-  /* full → pair → pair → full */
-  .bento-a, .bento-f { grid-column: span 2; height: 220px; }
+  /* full → pair → pair */
+  .bento-a { grid-column: span 2; height: 220px; }
 
   .produits-cta-banner {
     flex-direction: column;
