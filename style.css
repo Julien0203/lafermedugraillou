@@ -359,9 +359,10 @@ figcaption {
   background: rgba(0,0,0,.5);
   z-index: 899;
   opacity: 0;
+  pointer-events: none;
   transition: opacity .3s;
 }
-.nav-overlay.is-visible { opacity: 1; }
+.nav-overlay.is-visible { opacity: 1; pointer-events: auto; }
 
 /* ──────────────────────────────────────────────────────
    11. HERO
@@ -1358,9 +1359,8 @@ figcaption {
 
   .contact-map iframe { height: 260px; }
 
-  /* Stats band : grille 2×2 sur mobile.
-     Séparateurs via bordures (pas de fond translucide) pour éviter
-     toute bande claire pendant le fondu d'apparition. */
+  /* Stats band : grille 2×2 sur mobile, sans séparateurs ni fond
+     translucide pour éviter toute bande visible. */
   .stats-band { padding: 28px 0; }
   .stats-inner {
     display: grid;
@@ -1377,8 +1377,6 @@ figcaption {
     min-width: unset;
     flex: unset;
   }
-  .stat-item:nth-child(odd)  { border-right: 1px solid rgba(255,255,255,.16); }
-  .stat-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.16); }
 
   /* Split layout : réduire le gap */
   .split-layout,
