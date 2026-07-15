@@ -104,10 +104,14 @@ mm.add(
       const from = { opacity: 0 };
       const to   = { opacity: 1, duration: 0.85, delay, ease: 'power3.out' };
 
+      /* Sous 768px : pas de translation horizontale (évite le débordement
+         latéral). Les révélations latérales deviennent verticales. */
+      const isNarrow = window.matchMedia('(max-width: 767px)').matches;
+
       if (dir === 'fade-up')    { from.y = 44;   to.y = 0; }
       if (dir === 'fade-down')  { from.y = -44;  to.y = 0; }
-      if (dir === 'fade-left')  { from.x = 56;   to.x = 0; }
-      if (dir === 'fade-right') { from.x = -56;  to.x = 0; }
+      if (dir === 'fade-left')  { if (isNarrow) { from.y = 44; to.y = 0; } else { from.x = 56;  to.x = 0; } }
+      if (dir === 'fade-right') { if (isNarrow) { from.y = 44; to.y = 0; } else { from.x = -56; to.x = 0; } }
       if (dir === 'scale')      { from.scale = 0.92; to.scale = 1; }
 
       gsap.fromTo(el, from, {
@@ -178,10 +182,11 @@ mm.add(
     const transhuText = document.querySelector('.section-transhumance .split-text');
     const transhuImgs = document.querySelector('.section-transhumance .split-image, .section-transhumance .transhu-duo');
     if (transhuText && transhuImgs) {
+      const narrowTr = window.matchMedia('(max-width: 767px)').matches;
       gsap.fromTo(transhuImgs,
-        { opacity: 0, x: -60 },
+        narrowTr ? { opacity: 0, y: 44 } : { opacity: 0, x: -60 },
         {
-          opacity: 1, x: 0, duration: 1,
+          opacity: 1, x: 0, y: 0, duration: 1,
           scrollTrigger: { trigger: transhuText, start: 'top 82%', once: true },
         }
       );
