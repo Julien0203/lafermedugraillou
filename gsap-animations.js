@@ -11,7 +11,7 @@ const mm = gsap.matchMedia();
 mm.add(
   {
     reduceMotion: '(prefers-reduced-motion: reduce)',
-    isDesktop:    '(min-width: 1024px)',
+    motionOK:     '(prefers-reduced-motion: no-preference)',
   },
   (ctx) => {
     const { reduceMotion } = ctx.conditions;
