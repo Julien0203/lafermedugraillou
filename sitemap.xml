@@ -75,6 +75,21 @@
   </url>
 
   <url>
+    <loc>https://www.lafermedugraillou.fr/auberge.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.lafermedugraillou.fr/images/auberge1.jpg</image:loc>
+      <image:title>L'Auberge de la Ferme du Graillou au cœur de Cézens, Cantal – cuisine du terroir Aubrac</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.lafermedugraillou.fr/images/auberge2.jpg</image:loc>
+      <image:title>Salle de l'auberge de Cézens – ambiance conviviale, produits de la Ferme du Graillou</image:title>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://www.lafermedugraillou.fr/contact.html</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
